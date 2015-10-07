@@ -52,12 +52,7 @@
 :: Set home path
 @if not defined HOME set HOME=%USERPROFILE%
 
-@if defined CMDER_START (
-    @cd /d "%CMDER_START%"
-) else (
-    @if "%CD%\" == "%CMDER_ROOT%" (
-        @cd /d "%HOME%"
-    )
-)
+:: bannus-edit: Instead of cd'ing to cmder_start, run cmder_start
+@if defined CMDER_START "%CMDER_START%"
 
 :: @call "%CMDER_ROOT%/bin/agent.cmd"
